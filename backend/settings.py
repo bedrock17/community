@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import json
+
+# Config file add
+with open('/var/www/Community/config.json', 'r') as f:
+    json_config = json.load(f)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,8 +30,7 @@ SECRET_KEY = '#m91n+ye%44-(*6!ftx8s69z=^yxo3br!*hsun-c5+tmll-o+='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '18.221.73.221']
-
+ALLOWED_HOSTS = json_config['server']['allowed_host']
 
 # Application definition
 
@@ -76,11 +80,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'toycommu',
-        'USER': 'root',
-        'PASSWORD': 'adminme',
-        'HOST': '',
-        'PORT': '',
+        'NAME': json_config['server']['database']['db'], 
+        'USER': json_config['server']['database']['id'],
+        'PASSWORD': json_config['server']['database']['pw'],
+        'HOST': json_config['server']['database']['host'],
+        'PORT': json_config['server']['database']['port'],
     }
 }
 
