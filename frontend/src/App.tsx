@@ -1,7 +1,9 @@
 import React from 'react';
+
 import logo from './logo.svg';
 import './App.css';
-import CounterContainer from './components/Counter/CounterContainer';
+
+import Router from './pages';
 
 function App() {
   return (
@@ -12,7 +14,7 @@ function App() {
         </p>
       </header>
       <body>
-        <CounterContainer />
+        <Router />
       </body>
     </div>
   );
