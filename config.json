@@ -1,6 +1,6 @@
 {
 	"server": {
-		"allowed_host": ["127.0.0.1", "zoz0312.com",],
+		"allowed_host": ["127.0.0.1", "zoz0312.com"],
 		"database": {
 			"db": "",
 			"id": "",
