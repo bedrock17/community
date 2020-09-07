@@ -1,3 +1,4 @@
-/serenv
-/backend/__pycache__
+src/serenv
+**.pyc
+mysql
 config.json
