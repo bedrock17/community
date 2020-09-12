@@ -81,32 +81,19 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # connect mysql
 # pymysql.install_as_MySQLdb()
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'todoList',
-        'USER': 'user',
-        'PASSWORD': 'password',
-        'HOST': 'db',
-        'PORT': '3306',
-    }
-}
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': json_config['server']['database']['db'], 
-#         'USER': json_config['server']['database']['id'],
-#         'PASSWORD': json_config['server']['database']['pw'],
-#         'HOST': json_config['server']['database']['host'],
-#         'PORT': json_config['server']['database']['port'],
-#     }
-# }
-
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': json_config['server']['database']['db'], 
+        'USER': json_config['server']['database']['id'],
+        'PASSWORD': json_config['server']['database']['pw'],
+        'HOST': json_config['server']['database']['host'],
+        'PORT': json_config['server']['database']['port'],
+    }
+}
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 

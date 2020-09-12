@@ -1,0 +1,12 @@
+{
+	"server": {
+		"allowed_host": ["*"],
+		"database": {
+			"db": "samplecommunity",
+			"id": "sampleid",
+			"pw": "samplepwd",
+			"host": "192.168.35.242",
+			"port": "3306"
+		}
+	}
+}
