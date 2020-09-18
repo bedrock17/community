@@ -13,7 +13,7 @@ services:
         - python
 
   db:
-      image: mysql:8
+      image: jsurf/rpi-mariadb
       command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
       ports:
         - "3306:3306"
@@ -43,6 +43,7 @@ services:
           #python manage.py runserver 0:8001
       volumes:
         - ./src:/code
+        - ./conf:/var/www/community
       expose:
         - "8001"
       depends_on:

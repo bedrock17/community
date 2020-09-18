@@ -1,4 +1,4 @@
 src/serenv
 **.pyc
+src*
 mysql
-config.json
