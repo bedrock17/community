@@ -37,9 +37,9 @@ services:
         - |
           python manage.py makemigrations
           python manage.py migrate
-          uwsgi --socket :8001 --module backend.wsgi --py-autoreload 1 --logto /tmp/mylog.log
-          #uwsgi --http :8001 --module backend.wsgi --py-autoreload 1 --logto /tmp/mylog.log
           #python manage.py collectstatic
+          uwsgi --socket :8001 --module app.wsgi --py-autoreload 1 --logto /tmp/mylog.log
+          #uwsgi --http :8001 --module backend.wsgi --py-autoreload 1 --logto /tmp/mylog.log
           #python manage.py runserver 0:8001
       volumes:
         - ./src:/code
