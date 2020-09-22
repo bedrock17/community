@@ -1,8 +1,0 @@
-Django
-uwsgi
-mysqlclient==2.0.1
-djangorestframework
-Pillow
-django-webpack-loader
-bcrypt
-pyjwt

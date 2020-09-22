@@ -28,7 +28,7 @@ services:
         - ./sql:/docker-entrypoint-initdb.d
 
   python:
-      build: ./python
+      build: .
       #ports:
       #  - "8001:8001"
       command:
@@ -37,12 +37,13 @@ services:
         - |
           python manage.py makemigrations
           python manage.py migrate
-          uwsgi --socket :8001 --module backend.wsgi --py-autoreload 1 --logto /tmp/mylog.log
+          # python manage.py collectstatic
+          uwsgi --socket :8001 --module app.wsgi --py-autoreload 1 --logto /tmp/mylog.log
           #uwsgi --http :8001 --module backend.wsgi --py-autoreload 1 --logto /tmp/mylog.log
-          #python manage.py collectstatic
           #python manage.py runserver 0:8001
       volumes:
-        - ./src:/code
+        - ./community:/code
+        - ./conf:/var/www/community
       expose:
         - "8001"
       depends_on:
